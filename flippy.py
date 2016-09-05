@@ -286,6 +286,7 @@ def main():
         output_file_name=args.output,
         height_mm=args.height,
         dpi=args.dpi,
+        fps=args.fps,
         offset=args.offset)
 
 if __name__ == '__main__':
