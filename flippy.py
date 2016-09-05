@@ -198,7 +198,8 @@ class FlipbookCreator:
         else:
             all_frames = []
         for f in all_frames:
-            ready = float(i + 1) / self.frame_count
+            i += 1
+            ready = float(i) / self.frame_count
             if self.verbosity:
                 sys.stdout.write('\rVerarbeiten der Einzelbilder |{:30}| {}%'
                                  .format('X' * int(30 * ready), int(100 * ready)))
@@ -234,7 +235,6 @@ class FlipbookCreator:
                 pdf.rotate(90, text.x, text.y)
                 pdf.text(text.x, text.y + 5, '{}'.format(i))
                 pdf.rotate(0)
-            i += 1
 
         if y != 0 and x != 0:
             draw_raster()
